@@ -1,100 +1,91 @@
-<mxfile host="app.diagrams.net" modified="2026-03-06T00:00:00.000Z" agent="draw.io" version="24.7.17" type="github">
- <diagram id="petvalu-erd-final" name="ERD - To-Be Pet Valu Appointment Booking System">
- <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
- <root>
- <mxCell id="0"/>
- <mxCell id="1" parent="0"/>
+<mxfile host="app.diagrams.net" modified="2026-03-13T11:40:00.000Z" agent="draw.io" version="24.7.17" type="github">
+	<diagram id="petvalu-erd-refined" name="ERD - Pet Valu Appointment Booking">
+		<mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
 
- <mxCell id="title" value="ERD - To-Be Pet Valu Appointment Booking System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;" vertex="1" parent="1">
- <mxGeometry x="520" y="20" width="760" height="40" as="geometry"/>
- </mxCell>
+				<mxCell id="store" value="&lt;b&gt;Store&lt;/b&gt;&lt;hr/&gt;store_id (PK)&lt;br/&gt;store_name&lt;br/&gt;address&lt;br/&gt;phone" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="90" y="120" width="240" height="145" as="geometry"/>
+				</mxCell>
 
- <!-- Store + Service -->
- <mxCell id="store" value="&lt;b&gt;Store&lt;/b&gt;&lt;hr/&gt;store_id (PK)&lt;br/&gt;store_name&lt;br/&gt;address&lt;br/&gt;phone" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="80" y="120" width="220" height="145" as="geometry"/>
- </mxCell>
+				<mxCell id="service" value="&lt;b&gt;Service&lt;/b&gt;&lt;hr/&gt;service_id (PK)&lt;br/&gt;service_name&lt;br/&gt;description" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="90" y="330" width="240" height="125" as="geometry"/>
+				</mxCell>
 
- <mxCell id="service" value="&lt;b&gt;Service&lt;/b&gt;&lt;hr/&gt;service_id (PK)&lt;br/&gt;service_name&lt;br/&gt;description" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="80" y="340" width="220" height="125" as="geometry"/>
- </mxCell>
+				<mxCell id="storeservice" value="&lt;b&gt;StoreService&lt;/b&gt;&lt;hr/&gt;store_service_id (PK)&lt;br/&gt;store_id (FK)&lt;br/&gt;service_id (FK)&lt;br/&gt;duration_minutes&lt;br/&gt;booking_enabled" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#dae8fc;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="390" y="220" width="260" height="170" as="geometry"/>
+				</mxCell>
 
- <mxCell id="storeservice" value="&lt;b&gt;StoreService&lt;/b&gt;&lt;hr/&gt;store_service_id (PK)&lt;br/&gt;store_id (FK)&lt;br/&gt;service_id (FK)&lt;br/&gt;duration_minutes&lt;br/&gt;booking_enabled" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#dae8fc;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="400" y="210" width="250" height="170" as="geometry"/>
- </mxCell>
+				<mxCell id="slot" value="&lt;b&gt;AvailabilitySlot&lt;/b&gt;&lt;hr/&gt;slot_id (PK)&lt;br/&gt;store_service_id (FK)&lt;br/&gt;slot_start&lt;br/&gt;slot_end&lt;br/&gt;slot_status" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#dae8fc;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="700" y="220" width="270" height="170" as="geometry"/>
+				</mxCell>
 
- <!-- Booking -->
- <mxCell id="slot" value="&lt;b&gt;AvailabilitySlot&lt;/b&gt;&lt;hr/&gt;slot_id (PK)&lt;br/&gt;store_service_id (FK)&lt;br/&gt;slot_start&lt;br/&gt;slot_end&lt;br/&gt;slot_status" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#dae8fc;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="760" y="210" width="260" height="170" as="geometry"/>
- </mxCell>
+				<mxCell id="appointment" value="&lt;b&gt;Appointment&lt;/b&gt;&lt;hr/&gt;appointment_id (PK)&lt;br/&gt;slot_id (FK)&lt;br/&gt;customer_id (FK)&lt;br/&gt;pet_id (FK)&lt;br/&gt;booking_status&lt;br/&gt;confirmation_code" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#f8cecc;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="1020" y="210" width="290" height="190" as="geometry"/>
+				</mxCell>
 
- <mxCell id="appointment" value="&lt;b&gt;Appointment&lt;/b&gt;&lt;hr/&gt;appointment_id (PK)&lt;br/&gt;slot_id (FK)&lt;br/&gt;customer_id (FK)&lt;br/&gt;pet_id (FK)&lt;br/&gt;booking_status&lt;br/&gt;confirmation_code" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#f8cecc;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="1120" y="190" width="280" height="190" as="geometry"/>
- </mxCell>
+				<mxCell id="cancellation" value="&lt;b&gt;Cancellation&lt;/b&gt;&lt;hr/&gt;cancellation_id (PK)&lt;br/&gt;appointment_id (FK)&lt;br/&gt;cancelled_at&lt;br/&gt;cancel_reason" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#f8cecc;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="1360" y="225" width="260" height="145" as="geometry"/>
+				</mxCell>
 
- <mxCell id="cancellation" value="&lt;b&gt;Cancellation&lt;/b&gt;&lt;hr/&gt;cancellation_id (PK)&lt;br/&gt;appointment_id (FK)&lt;br/&gt;cancelled_at&lt;br/&gt;cancel_reason" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#f8cecc;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="1500" y="200" width="250" height="145" as="geometry"/>
- </mxCell>
+				<mxCell id="customer" value="&lt;b&gt;Customer&lt;/b&gt;&lt;hr/&gt;customer_id (PK)&lt;br/&gt;customer_name&lt;br/&gt;email&lt;br/&gt;phone&lt;br/&gt;preferred_contact" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="170" y="620" width="260" height="170" as="geometry"/>
+				</mxCell>
 
- <!-- Customer + Pet -->
- <mxCell id="customer" value="&lt;b&gt;Customer&lt;/b&gt;&lt;hr/&gt;customer_id (PK)&lt;br/&gt;customer_name&lt;br/&gt;email&lt;br/&gt;phone&lt;br/&gt;preferred_contact" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="180" y="640" width="250" height="170" as="geometry"/>
- </mxCell>
+				<mxCell id="pet" value="&lt;b&gt;Pet&lt;/b&gt;&lt;hr/&gt;pet_id (PK)&lt;br/&gt;customer_id (FK)&lt;br/&gt;pet_name&lt;br/&gt;species&lt;br/&gt;size" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="490" y="620" width="230" height="155" as="geometry"/>
+				</mxCell>
 
- <mxCell id="pet" value="&lt;b&gt;Pet&lt;/b&gt;&lt;hr/&gt;pet_id (PK)&lt;br/&gt;customer_id (FK)&lt;br/&gt;pet_name&lt;br/&gt;species&lt;br/&gt;size" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="560" y="645" width="220" height="155" as="geometry"/>
- </mxCell>
+				<mxCell id="rewards" value="&lt;b&gt;RewardsProfile&lt;/b&gt;&lt;hr/&gt;rewards_profile_id (PK)&lt;br/&gt;customer_id (FK)&lt;br/&gt;membership_number" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="170" y="835" width="260" height="130" as="geometry"/>
+				</mxCell>
 
- <mxCell id="rewards" value="&lt;b&gt;RewardsProfile&lt;/b&gt;&lt;hr/&gt;rewards_profile_id (PK)&lt;br/&gt;customer_id (FK)&lt;br/&gt;membership_number" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#d5e8d4;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="180" y="885" width="250" height="130" as="geometry"/>
- </mxCell>
+				<mxCell id="communication" value="&lt;b&gt;Communication&lt;/b&gt;&lt;hr/&gt;communication_id (PK)&lt;br/&gt;appointment_id (FK)&lt;br/&gt;message_channel&lt;br/&gt;message_type&lt;br/&gt;scheduled_time&lt;br/&gt;delivery_status" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#e1d5e7;fontSize=12;" vertex="1" parent="1">
+					<mxGeometry x="1360" y="550" width="300" height="190" as="geometry"/>
+				</mxCell>
 
- <!-- Communication -->
- <mxCell id="communication" value="&lt;b&gt;Communication&lt;/b&gt;&lt;hr/&gt;communication_id (PK)&lt;br/&gt;appointment_id (FK)&lt;br/&gt;message_channel&lt;br/&gt;message_type&lt;br/&gt;scheduled_time&lt;br/&gt;delivery_status" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#e1d5e7;fontSize=12;" vertex="1" parent="1">
- <mxGeometry x="1460" y="610" width="290" height="190" as="geometry"/>
- </mxCell>
+				<mxCell id="e1" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="store" target="storeservice">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <!-- ERD Relationships -->
- <mxCell id="e1" value="offers" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="store" target="storeservice">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e2" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="service" target="storeservice">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e2" value="includes" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="service" target="storeservice">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e3" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="storeservice" target="slot">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e3" value="has" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="storeservice" target="slot">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e4" value="1:1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERone;startFill=0;endFill=0;" edge="1" parent="1" source="slot" target="appointment">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e4" value="books into" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERone;startFill=0;endFill=0;" edge="1" parent="1" source="slot" target="appointment">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e5" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="customer" target="pet">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e5" value="books" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="customer" target="appointment">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e6" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="customer" target="appointment">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e6" value="owns" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="customer" target="pet">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e7" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="pet" target="appointment">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e7" value="for" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="pet" target="appointment">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e8" value="0..1:1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERone;startFill=0;endFill=0;dashed=1;" edge="1" parent="1" source="customer" target="rewards">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e8" value="may have" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERone;startFill=0;endFill=0;dashed=1;" edge="1" parent="1" source="customer" target="rewards">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e9" value="0..1:1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERone;startFill=0;endFill=0;dashed=1;" edge="1" parent="1" source="appointment" target="cancellation">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e9" value="may create" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERone;startFill=0;endFill=0;" edge="1" parent="1" source="appointment" target="cancellation">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
+				<mxCell id="e10" value="1:N" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="appointment" target="communication">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
 
- <mxCell id="e10" value="triggers" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;startArrow=ERone;endArrow=ERmany;startFill=0;endFill=0;" edge="1" parent="1" source="appointment" target="communication">
- <mxGeometry relative="1" as="geometry"/>
- </mxCell>
-
- </root>
- </mxGraphModel>
- </diagram>
+			</root>
+		</mxGraphModel>
+	</diagram>
 </mxfile>
