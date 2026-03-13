@@ -5,6 +5,10 @@
 				<mxCell id="0"/>
 				<mxCell id="1" parent="0"/>
 
+				<mxCell id="title" value="&lt;b&gt;Database Schema - To-Be Pet Valu Appointment Booking System&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+					<mxGeometry x="80" y="30" width="900" height="50" as="geometry"/>
+				</mxCell>
+
 				<mxCell id="store" value="&lt;b&gt;Store&lt;/b&gt;&lt;hr/&gt;store_id : bigint PK&lt;br/&gt;store_name : varchar(100)&lt;br/&gt;address : varchar(255)&lt;br/&gt;phone : varchar(20)" style="shape=table;startSize=28;html=1;whiteSpace=wrap;strokeColor=#000000;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="1">
 					<mxGeometry x="80" y="120" width="250" height="145" as="geometry"/>
 				</mxCell>
